@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-22 13:19:46.217824",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "opprotunity_type",
+  "product_add_on_upsell_motor",
+  "product_add_on_crossell_motor",
+  "estimated_premium",
+  "product_description",
+  "status",
+  "date_logged"
+ ],
+ "fields": [
+  {
+   "default": "Upsell",
+   "fieldname": "opprotunity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Opprotunity Type",
+   "options": "Upsell\nCrossell"
+  },
+  {
+   "depends_on": "eval:doc.opprotunity_type==\"Upsell\"",
+   "fieldname": "product_add_on_upsell_motor",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Product / Add-on",
+   "options": "Zero Dep\nEngine Protect\nNCB Protection\nConsumables Cover\nRoadside Assistance (RSA)"
+  },
+  {
+   "fieldname": "product_add_on_crossell_motor",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Product / Add-on",
+   "options": "Personal Accident\nTerm Life Insurance\nCritical Illness (Standalone)\nHome Insurance\nTravel Insurance\nWorkmen's Compensation (Commercial)"
+  },
+  {
+   "fieldname": "estimated_premium",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Estimated Premium"
+  },
+  {
+   "fieldname": "product_description",
+   "fieldtype": "Small Text",
+   "label": "Product Description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pitched\nInterested\nConfirmed\nDeclined"
+  },
+  {
+   "fieldname": "date_logged",
+   "fieldtype": "Date",
+   "label": "Date Logged"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-22 13:34:34.613439",
+ "modified_by": "Administrator",
+ "module": "Renewal Management System",
+ "name": "RMS Opportunities",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

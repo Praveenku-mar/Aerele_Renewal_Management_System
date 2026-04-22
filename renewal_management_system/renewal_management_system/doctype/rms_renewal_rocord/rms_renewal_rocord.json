@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-22 12:57:00.695950",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identification_section",
+  "policy",
+  "column_break_mygc",
+  "product_type",
+  "stages_section",
+  "stage",
+  "trigger_date",
+  "policy_expire_date",
+  "column_break_kkls",
+  "days_to_expiry",
+  "closure_date",
+  "premium_and_revenue_section",
+  "last_year_premium",
+  "new_premium",
+  "column_break_rqyt",
+  "revenue_delta",
+  "ncb_percent",
+  "outcomes_section",
+  "outcome",
+  "is_interested_opportunities",
+  "new_policy_number",
+  "new_insurer",
+  "lost_deferred_reason",
+  "column_break_dpto",
+  "reason",
+  "followup_date",
+  "deferral_count",
+  "assignment_tab",
+  "cse_details_section",
+  "assigned_cse",
+  "is_unassigned",
+  "activity_details_section",
+  "activity_logs",
+  "motors_quotes_section",
+  "quotes",
+  "opportunities_details_section",
+  "opportunities"
+ ],
+ "fields": [
+  {
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "Identification "
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Policy",
+   "options": "RMS Motor Policy"
+  },
+  {
+   "fetch_from": "policy.policy_type",
+   "fieldname": "product_type",
+   "fieldtype": "Data",
+   "label": "Product Type"
+  },
+  {
+   "fieldname": "column_break_mygc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stages_section",
+   "fieldtype": "Section Break",
+   "label": "Stages"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Triggered\nContacted\nQuotes Shared\nDecision Pending\nClosed"
+  },
+  {
+   "default": "now",
+   "fieldname": "trigger_date",
+   "fieldtype": "Date",
+   "label": "Trigger Date"
+  },
+  {
+   "fieldname": "policy_expire_date",
+   "fieldtype": "Date",
+   "label": "Policy Expire Date"
+  },
+  {
+   "fieldname": "column_break_kkls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days_to_expiry",
+   "fieldtype": "Int",
+   "label": "Days to Expiry"
+  },
+  {
+   "fieldname": "closure_date",
+   "fieldtype": "Date",
+   "label": "Closure Date"
+  },
+  {
+   "fieldname": "premium_and_revenue_section",
+   "fieldtype": "Section Break",
+   "label": "Premium and Revenue"
+  },
+  {
+   "fieldname": "last_year_premium",
+   "fieldtype": "Currency",
+   "label": "Last Year Premium"
+  },
+  {
+   "fieldname": "new_premium",
+   "fieldtype": "Currency",
+   "label": "New Premium"
+  },
+  {
+   "fieldname": "column_break_rqyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revenue_delta",
+   "fieldtype": "Currency",
+   "label": "Revenue Delta"
+  },
+  {
+   "fieldname": "ncb_percent",
+   "fieldtype": "Int",
+   "label": "NCB Percent"
+  },
+  {
+   "fieldname": "outcomes_section",
+   "fieldtype": "Section Break",
+   "label": "Outcomes"
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "label": "Outcome",
+   "options": "Won\nLost\nDeferred\nLapsed"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_interested_opportunities",
+   "fieldtype": "Check",
+   "label": "Is Interested Opportunities"
+  },
+  {
+   "depends_on": "eval:doc.outcome==\"Win\"",
+   "fieldname": "new_policy_number",
+   "fieldtype": "Data",
+   "label": "New Policy Number"
+  },
+  {
+   "fieldname": "new_insurer",
+   "fieldtype": "Link",
+   "label": "New Insurer ",
+   "options": "Insurance Company"
+  },
+  {
+   "depends_on": "eval:doc.outcome==\"Lost\"",
+   "fieldname": "lost_deferred_reason",
+   "fieldtype": "Select",
+   "label": "Lost / Deferred Reason",
+   "options": "Premium to high\nSwitched to employer group policy\nSwitched to family member's policy\nCoverage not suitable\nCustomer emigrating / relocating\nFinancial Constraints\nCustomer deceased\nOther"
+  },
+  {
+   "depends_on": "eval:doc.lost_deferred_reason==\"Other\"",
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason",
+   "mandatory_depends_on": "eval:doc.lost_deferred_reason==\"Other\""
+  },
+  {
+   "fieldname": "followup_date",
+   "fieldtype": "Date",
+   "label": "Followup Date"
+  },
+  {
+   "fieldname": "deferral_count",
+   "fieldtype": "Int",
+   "label": "Deferral Count"
+  },
+  {
+   "fieldname": "column_break_dpto",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assignment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Assignment"
+  },
+  {
+   "fieldname": "cse_details_section",
+   "fieldtype": "Section Break",
+   "label": "CSE Details"
+  },
+  {
+   "fieldname": "assigned_cse",
+   "fieldtype": "Data",
+   "label": "Assigned CSE"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_unassigned",
+   "fieldtype": "Check",
+   "label": "Is Unassigned"
+  },
+  {
+   "fieldname": "activity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Communication Details"
+  },
+  {
+   "fieldname": "activity_logs",
+   "fieldtype": "Table",
+   "label": "Activity Logs",
+   "options": "RMS Activity Log"
+  },
+  {
+   "fieldname": "motors_quotes_section",
+   "fieldtype": "Section Break",
+   "label": "Motors Quotes"
+  },
+  {
+   "fieldname": "quotes",
+   "fieldtype": "Table",
+   "label": "Quotes ",
+   "options": "RMS Motor Quotes"
+  },
+  {
+   "fieldname": "opportunities_details_section",
+   "fieldtype": "Section Break",
+   "label": "Opportunities Details"
+  },
+  {
+   "fieldname": "opportunities",
+   "fieldtype": "Table",
+   "label": "Opportunities ",
+   "options": "RMS Opportunities"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-22 13:39:11.809950",
+ "modified_by": "Administrator",
+ "module": "Renewal Management System",
+ "name": "RMS Renewal Rocord",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

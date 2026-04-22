@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-22 13:17:24.768428",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "insurer",
+  "idv",
+  "tp_premium",
+  "od_premium",
+  "total_premium",
+  "quote_document",
+  "is_recommended"
+ ],
+ "fields": [
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Insurer ",
+   "options": "Insurance Company"
+  },
+  {
+   "fieldname": "idv",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "IDV"
+  },
+  {
+   "fieldname": "tp_premium",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "TP Premium"
+  },
+  {
+   "fieldname": "od_premium",
+   "fieldtype": "Currency",
+   "label": "OD Premium"
+  },
+  {
+   "fieldname": "total_premium",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Premium"
+  },
+  {
+   "fieldname": "quote_document",
+   "fieldtype": "Attach",
+   "label": "Quote Document"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_recommended",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Recommended"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-22 13:19:23.142059",
+ "modified_by": "Administrator",
+ "module": "Renewal Management System",
+ "name": "RMS Motor Quotes",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

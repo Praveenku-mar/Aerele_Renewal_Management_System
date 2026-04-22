@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-22 13:13:14.408180",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_type",
+  "activity_date",
+  "reached_",
+  "outcome_notes",
+  "next_action",
+  "next_action_date",
+  "attachements",
+  "template_used"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Activity type",
+   "options": "Whatsapp\nEmail\nCall"
+  },
+  {
+   "fieldname": "activity_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Activity Date"
+  },
+  {
+   "fieldname": "reached_",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Reached ?",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "outcome_notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Outcome Notes"
+  },
+  {
+   "fieldname": "next_action",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Next Action",
+   "options": "Call Back\nSend Quotes\nAwait Customer Response\nEscalate\nNo Further Action"
+  },
+  {
+   "fieldname": "next_action_date",
+   "fieldtype": "Date",
+   "label": "Next action date"
+  },
+  {
+   "fieldname": "attachements",
+   "fieldtype": "Attach",
+   "label": "Attachements"
+  },
+  {
+   "fieldname": "template_used",
+   "fieldtype": "Data",
+   "label": "Template Used"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-22 13:16:23.180627",
+ "modified_by": "Administrator",
+ "module": "Renewal Management System",
+ "name": "RMS Activity Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
