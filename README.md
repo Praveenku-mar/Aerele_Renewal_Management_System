@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # Aerele_Renewal_Management_System
-=======
+
 ### Renewal Management System
 
 Policy renewal is the process of extending an insurance policy beyond its expiration date, ensuring continuous coverage and benefits. It involves paying subsequent premiums, allowing policyholders to update coverage, maintain no-claim bonuses, and avoid waiting periods for, say, health insurance. Renewals typically involve reviewing, updating, and accepting new policy terms. 
