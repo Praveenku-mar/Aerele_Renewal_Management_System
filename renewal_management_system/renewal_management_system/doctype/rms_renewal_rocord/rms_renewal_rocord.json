@@ -27,7 +27,8 @@
   "is_interested_opportunities",
   "new_policy_number",
   "new_insurer",
-  "lost_deferred_reason",
+  "lost_reason",
+  "deferred_reason",
   "column_break_dpto",
   "reason",
   "followup_date",
@@ -160,23 +161,17 @@
    "options": "Insurance Company"
   },
   {
-   "depends_on": "eval:doc.outcome==\"Lost\"",
-   "fieldname": "lost_deferred_reason",
-   "fieldtype": "Select",
-   "label": "Lost / Deferred Reason",
-   "options": "Premium to high\nSwitched to employer group policy\nSwitched to family member's policy\nCoverage not suitable\nCustomer emigrating / relocating\nFinancial Constraints\nCustomer deceased\nOther"
-  },
-  {
-   "depends_on": "eval:doc.lost_deferred_reason==\"Other\"",
+   "depends_on": "eval:doc.lost_reason==\"Other\" || doc.deferred_reason==\"Other\"",
    "fieldname": "reason",
    "fieldtype": "Small Text",
    "label": "Reason",
-   "mandatory_depends_on": "eval:doc.lost_deferred_reason==\"Other\""
+   "mandatory_depends_on": "eval:doc.lost_reason==\"Other\" || doc.deferred_reason==\"Other\""
   },
   {
    "fieldname": "followup_date",
    "fieldtype": "Date",
-   "label": "Followup Date"
+   "label": "Followup Date",
+   "mandatory_depends_on": "eval:doc.outcome==\"Deffered\""
   },
   {
    "fieldname": "deferral_count",
@@ -240,12 +235,26 @@
    "fieldtype": "Table",
    "label": "Opportunities ",
    "options": "RMS Opportunities"
+  },
+  {
+   "depends_on": "eval:doc.outcome==\"Lost\"",
+   "fieldname": "lost_reason",
+   "fieldtype": "Select",
+   "label": "Lost Reason",
+   "options": "Premium to high\nSwitched to employer group policy\nSwitched to family member's policy\nCoverage not suitable\nCustomer emigrating / relocating\nFinancial Constraints\nCustomer deceased\nOther"
+  },
+  {
+   "depends_on": "eval:doc.outcome==\"Deferred\"",
+   "fieldname": "deferred_reason",
+   "fieldtype": "Select",
+   "label": "Deferred Reason",
+   "options": "Out of station\nFinancial Constraints\nVehicle in Workshop\nAwaiting Claim Settlement\nOther"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-22 13:39:11.809950",
+ "modified": "2026-04-24 14:18:53.243661",
  "modified_by": "Administrator",
  "module": "Renewal Management System",
  "name": "RMS Renewal Rocord",

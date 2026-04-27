@@ -61,15 +61,16 @@
   },
   {
    "fieldname": "template_used",
-   "fieldtype": "Data",
-   "label": "Template Used"
+   "fieldtype": "Link",
+   "label": "Template Used",
+   "options": "RMS Template"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-04-22 13:16:23.180627",
+ "modified": "2026-04-27 15:55:56.693832",
  "modified_by": "Administrator",
  "module": "Renewal Management System",
  "name": "RMS Activity Log",
